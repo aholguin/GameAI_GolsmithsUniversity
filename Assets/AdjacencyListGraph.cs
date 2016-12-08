@@ -31,6 +31,7 @@ public class AdjacencyListGraph : Graph
 	
     public List<int> neighbours (int a)
     {
+		//Debug.Log ("entered to neigh...");
 		for (int i = 0; i < this.edge.Count; i++) {
 			if (this.edge [i] [0] == a) {
 				this.neighbour.Add (this.edge [i] [1]);
