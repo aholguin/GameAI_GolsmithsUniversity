@@ -47,7 +47,12 @@ public class WaypointGraph {
 		navGraph.addEdge (0, 1);
 		navGraph.addEdge (1, 2);
 		navGraph.addEdge (2, 3);
-		navGraph.addEdge (3, 0);
+		navGraph.addEdge (3,4);
+		navGraph.addEdge (4,5);
+		navGraph.addEdge (5,6);
+		navGraph.addEdge (6,7);
+		navGraph.addEdge (7,0);
+
 	
 
 	}
@@ -148,6 +153,25 @@ public class WaypointGraph {
 
 	}
 
+
+	public int? findneighboursFar(int objective, Vector3 player) {
+		List<int> neighbours = navGraph.neighbours(objective);
+
+		float maxDistance = 0;
+		int? wp  = null;
+		foreach (int next in neighbours) {
+			GameObject nextO = waypoints [next];
+			float newDistance = Vector3.Distance (nextO.transform.position, player);
+			if (newDistance > maxDistance) {
+				maxDistance = newDistance;
+				wp = next;
+			}
+		}
+
+		return wp;
+	}
+
+
 	protected int heuristic (int a, int b){
 		GameObject waypointA;
 		GameObject waypointB;
@@ -156,4 +180,6 @@ public class WaypointGraph {
 		float Distance = Vector3.Distance (waypointA.transform.position, waypointB.transform.position);
 		return (int)Distance;
 	}
+
+
 }

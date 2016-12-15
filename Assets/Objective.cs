@@ -11,6 +11,7 @@ public class Objective : MonoBehaviour {
 
 	public WaypointGraph waypoints;
 	public GameObject waypointSet;
+	public GameObject Player;
 	public List<int> path;
 	public float speed;
 	public float NEARBY = 0.2f;
@@ -46,7 +47,14 @@ public class Objective : MonoBehaviour {
 
 
 	public bool isSphereClose() {
-		if (Input.GetKey ("1")) {
+		
+
+		Vector3 there = Player.transform.position;
+		Vector3 here = transform.position;
+
+		// Are we there yet?
+		float distance = Vector3.Distance (here, there);
+		if (distance < NEARBY + 2) {
 			return true;
 		} else {
 			return false;

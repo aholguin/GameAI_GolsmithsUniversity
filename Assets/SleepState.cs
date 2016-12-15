@@ -9,11 +9,11 @@ public class SleepState : State<Objective> {
 
 	public void execute(Objective agent) {
 
-		Debug.Log ("Sleppening");
+		//Debug.Log ("Sleppening");
 
 		if (agent.isSphereClose()) {
 			
-			agent.fsm.changeState (new RuntState());
+			agent.fsm.changeState (new RunState());
 		}
 
 	}
