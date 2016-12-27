@@ -71,6 +71,7 @@ public class WaypointGraph {
 				float distance = Vector3.Distance (here, there);
 				if (distance < minDistance) {
 					nearest = i;
+					minDistance = distance;
 				}
 			}
 		}
@@ -167,7 +168,7 @@ public class WaypointGraph {
 				wp = next;
 			}
 		}
-
+		//Debug.Log ("the far is "+ wp);
 		return wp;
 	}
 

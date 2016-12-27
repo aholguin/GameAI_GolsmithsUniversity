@@ -10,10 +10,10 @@ public class RunState : State<Objective> {
 		int?  furthest = agent.waypoints.findFurthest(agent.transform.position);
 		int?  nearest = agent.waypoints.findNearest(agent.transform.position);
 
-
-
+		//Debug.Log ("this is the furthest wp --" + furthest.Value);
+		Debug.Log ("this is the nearest wp --" + nearest.Value);
 		agent.path = agent.waypoints.findPath (nearest.Value,furthest.Value);
-		//Debug.Log ("this is the furthest wp --" + furthest);
+
 		Debug.Log(writePath (agent.path));
 
 		//check if the player is between two waypoits of the path

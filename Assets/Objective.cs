@@ -54,7 +54,7 @@ public class Objective : MonoBehaviour {
 
 		// Are we there yet?
 		float distance = Vector3.Distance (here, there);
-		if (distance < NEARBY + 2) {
+		if (distance < NEARBY + 5) {
 			return true;
 		} else {
 			return false;
