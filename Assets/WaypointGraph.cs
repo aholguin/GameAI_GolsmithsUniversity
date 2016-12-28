@@ -51,7 +51,22 @@ public class WaypointGraph {
 		navGraph.addEdge (4,5);
 		navGraph.addEdge (5,6);
 		navGraph.addEdge (6,7);
-		navGraph.addEdge (7,0);
+		navGraph.addEdge (7,8);
+
+		navGraph.addEdge (8,9);
+		navGraph.addEdge (9,10);
+		navGraph.addEdge (9,11);
+		navGraph.addEdge (10,14);
+		navGraph.addEdge (14,13);
+		navGraph.addEdge (13,16);
+		navGraph.addEdge (11,12);
+		navGraph.addEdge (12,15);
+		navGraph.addEdge (15,16);
+		navGraph.addEdge (16,17);
+		navGraph.addEdge (17,18);
+		navGraph.addEdge (18,19);
+		navGraph.addEdge (19,20);
+		navGraph.addEdge (20,0);
 
 	
 
