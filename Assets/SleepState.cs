@@ -12,7 +12,10 @@ public class SleepState : State<Objective> {
 		//Debug.Log ("Sleppening");
 
 		if (agent.isSphereClose()) {
-			
+
+			string temp  = agent.logText.text;
+			agent.logText.text = "The Objetive has changed its state to RUN!!";
+			agent.logText.text +=  "\n^" +temp;
 			agent.fsm.changeState (new RunState());
 		}
 

@@ -11,10 +11,11 @@ public class RunState : State<Objective> {
 		int?  nearest = agent.waypoints.findNearest(agent.transform.position);
 
 		//Debug.Log ("this is the furthest wp --" + furthest.Value);
-		Debug.Log ("this is the nearest wp --" + nearest.Value);
+		//Debug.Log ("this is the nearest wp --" + nearest.Value);
+		//Debug.Log ("this is the furthest wp --" + furthest.Value);
 		agent.path = agent.waypoints.findPath (nearest.Value,furthest.Value);
 
-		Debug.Log(writePath (agent.path));
+		Debug.Log("the path is ->" + writePath ( agent.path));
 
 		//check if the player is between two waypoits of the path
 		int inthepath = 0;
@@ -33,6 +34,12 @@ public class RunState : State<Objective> {
 
 		//the player is in the route, the objective has to move to one of the neighbours 
 		if (inthepath == 2) {
+			
+			string temp  = agent.logText.text;
+
+			agent.logText.text = "the player is in the route, the objective has to move to one of the neighbours ";
+
+			agent.logText.text += "\n^" +temp;
 
 			int? wp;
 			wp = agent.waypoints.findneighboursFar (agent.path[0],agent.Player.transform.position);
@@ -71,7 +78,12 @@ public class RunState : State<Objective> {
 			}
 		} else {
 		//if (agent.isObjectiveInTarget()) {
+			string temp  = agent.logText.text;
 
+			agent.logText.text = "The Objetive has changed its state to SLEEP!!";
+
+			agent.logText.text += "\n^" +temp;
+				
 			agent.fsm.changeState (new SleepState());
 		}
 

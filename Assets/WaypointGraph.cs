@@ -44,9 +44,9 @@ public class WaypointGraph {
 		}
 
 		// ADD APPROPRIATE EDGES
-		navGraph.addEdge (0, 1);
-		navGraph.addEdge (1, 2);
-		navGraph.addEdge (2, 3);
+		navGraph.addEdge (0,1);
+		navGraph.addEdge (1,2);
+		navGraph.addEdge (2,3);
 		navGraph.addEdge (3,4);
 		navGraph.addEdge (4,5);
 		navGraph.addEdge (5,6);
@@ -135,7 +135,7 @@ public class WaypointGraph {
 			List<int> neighbours = navGraph.neighbours(current);
 
 			foreach (int next in neighbours) {
-
+				//Debug.Log ("neighbour of "+  current + " ->" + next);
 				int nextCost = costSoFar[current] + navGraph.cost(current, next);
 
 

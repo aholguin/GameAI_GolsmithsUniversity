@@ -31,11 +31,14 @@ public class AdjacencyListGraph : Graph
 	
     public List<int> neighbours (int a)
     {
+		this.neighbour.Clear ();
 		//Debug.Log ("entered to neigh...");
 		for (int i = 0; i < this.edge.Count; i++) {
 			if (this.edge [i] [0] == a) {
+				Debug.Log ("check the edge 0 ->" + this.edge [i] [0]);
 				this.neighbour.Add (this.edge [i] [1]);
 			} else if (this.edge [i] [1] == a) {
+				Debug.Log ("check the edge 1 ->" + this.edge [i] [1]);
 				this.neighbour.Add (this.edge [i] [0]);
 			}
 		}

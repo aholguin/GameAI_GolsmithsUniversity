@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Roll A Ball.unity
+- path: Assets/Scenes/Capture the Lazy.unity
   isLoaded: 1
   isActive: 1

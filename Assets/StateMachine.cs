@@ -17,6 +17,7 @@ public class StateMachine<A> {
 
 		current.enter(agent);
 
+		//agent.logText.text = "The Objetive has change its state to..";
 	}
 
 	public void update() {

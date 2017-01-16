@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 
 
@@ -12,6 +13,7 @@ public class Objective : MonoBehaviour {
 	public WaypointGraph waypoints;
 	public GameObject waypointSet;
 	public GameObject Player;
+	public Text logText;
 	public List<int> path;
 	public float speed;
 	public float NEARBY = 0.2f;
