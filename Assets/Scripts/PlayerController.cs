@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public Text winText;
 	private Rigidbody rb;
 	private int count;
+	private int playtime = 0;
 
 	void Start ()
 	{
@@ -20,7 +21,17 @@ public class PlayerController : MonoBehaviour {
 		count = 0;
 		SetCountText ();
 		winText.text = "";
+		StartCoroutine ("Playtime"); 
 	}
+
+	private IEnumerator Playtime(){
+		while (true && count ==0  ) {
+			yield return new WaitForSeconds (1);
+			playtime += 1;
+			 
+		}
+	}
+
 	void FixedUpdate ()
 	//Ball movement
 	{
@@ -30,6 +41,8 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
 		rb.AddForce (movement * speed);
+
+		countText.text = "Time: " + playtime;
 	}
 
 	void OnTriggerEnter (Collider other)
@@ -44,13 +57,15 @@ public class PlayerController : MonoBehaviour {
 			
 	}
 
+
+
 	void SetCountText ()
 	//The wintext text is displayed once you collect all the pickups
 	{
 		countText.text = "Count: " + count.ToString ();
-		if (count >= 12)
+		if (count >= 0)
 			{
-				winText.text = "You Win!";
+			winText.text = "You Win! Your Time was " + playtime;
 			}
 	}
 

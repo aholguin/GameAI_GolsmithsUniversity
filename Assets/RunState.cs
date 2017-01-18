@@ -83,7 +83,9 @@ public class RunState : State<Objective> {
 			agent.logText.text = "The Objetive has changed its state to SLEEP!!";
 
 			agent.logText.text += "\n^" +temp;
-				
+			agent.r.material.color= Color.yellow;
+			agent.sleep_state.SetActive (true);
+			agent.run_state.SetActive (false);
 			agent.fsm.changeState (new SleepState());
 		}
 

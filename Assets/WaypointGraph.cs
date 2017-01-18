@@ -25,6 +25,7 @@ public class WaypointGraph {
 		if (waypointSet != null) {
 			foreach (Transform t in waypointSet.transform) {
 				waypoints.Add (t.gameObject);
+				t.gameObject.transform.GetChild (0).gameObject.SetActive (false);; 
 			}
 			Debug.Log("Found " + waypoints.Count + " waypoints.");
 

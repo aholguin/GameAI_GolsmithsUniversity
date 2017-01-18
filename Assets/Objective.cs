@@ -18,12 +18,21 @@ public class Objective : MonoBehaviour {
 	public float speed;
 	public float NEARBY = 0.2f;
 	public int? current;
+	public Renderer r;
+	public GameObject sleep_state;
+	public GameObject run_state;
+
 	//public Graph navGraph;
+
+
 
 
 
 	// Use this for initialization
 	void Start () {
+
+		r = GetComponent<Renderer>();
+
 		
 		waypoints = new WaypointGraph (waypointSet);
 
